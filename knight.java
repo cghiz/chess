@@ -17,12 +17,15 @@ public class knight extends Piece
     {
         int xDifference = Math.abs(endx-startx);
         int yDifference = Math.abs(endy-starty);
+        //two squares one way and one in another (L shape)
         if ((xDifference==2&&yDifference==1)||(xDifference==1&&yDifference==2))
         {
+            //empty square
             if (Chess.position[endx][endy]==null)
             {
                 return true;
             }
+            //capture
             if (Chess.position[endx][endy].color!=color)
             {
                 return true;
