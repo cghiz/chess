@@ -17,9 +17,11 @@ public class queen extends Piece
     {
         int xDifference = Math.abs(endx-startx);
         int yDifference = Math.abs(endy-starty);
+        //horizontal,vertical, or diagonal
         if (startx!=endx && starty!=endy && xDifference!=yDifference) {
             return false;
         }
+        //direction
         int xDirection=0;
         int yDirection=0;
         if (endx>startx) {
@@ -39,6 +41,7 @@ public class queen extends Piece
         }
         int x= startx+xDirection;
         int y= starty+yDirection;
+        //no pieces in the way
         while(x!=endx ||y!=endy) {
             if (Chess.position[x][y] != null) {
                 return false;
@@ -46,10 +49,12 @@ public class queen extends Piece
             x += xDirection;
             y += yDirection;
         }
+        //empty spaces
         if (Chess.position[endx][endy]==null)
         {
             return true;
         }
+        //capture
         if (Chess.position[endx][endy].color!= color)
         {
             return true;
