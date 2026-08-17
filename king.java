@@ -17,12 +17,15 @@ public class king extends Piece
     {
         int xDifference=Math.abs(endx-startx);
         int yDifference=Math.abs(endy-starty);
+        //one square in any direction
         if (xDifference<=1 &&yDifference<=1)
         {
+            //empty
             if (Chess.position[endx][endy]==null)
             {
                 return true;
             }
+            //capture
             if (Chess.position[endx][endy].color!=color)
             {
                 return true;
