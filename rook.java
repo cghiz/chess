@@ -15,9 +15,11 @@ public class rook extends Piece
     }
     public boolean canMove(int startx, int starty, int endx,int endy)
     {
+        //rook can go horizontal or vertical 
         if (startx!=endx&&starty!=endy) {
             return false;
         }
+        //figure out direction
         int xDirection=0;
         int yDirection=0;
         if (endx>startx) {
@@ -37,6 +39,7 @@ public class rook extends Piece
         }
         int x= startx+xDirection;
         int y= starty+yDirection;
+        //check if piece in the way
         while(x!=endx ||y!=endy) {
             if (Chess.position[x][y] != null) {
                 return false;
@@ -44,10 +47,12 @@ public class rook extends Piece
             x += xDirection;
             y += yDirection;
         }
+        //empty space
         if (Chess.position[endx][endy]==null)
         {
             return true;
         }
+        //capture
         if (Chess.position[endx][endy].color!= color)
         {
             return true;
