@@ -13,10 +13,12 @@ public class bishop extends Piece {
     {
         int xDifference = Math.abs(endx - startx);
         int yDifference = Math.abs(endy - starty);
+        //moves diagonally
         if (xDifference!=yDifference)
         {
             return false;
         }
+        //directions
         int xDirection=1;
         int yDirection=1;
         if (endx<startx)
@@ -29,6 +31,7 @@ public class bishop extends Piece {
         }
         int x= startx+xDirection;
         int y= starty+yDirection;
+        //look for blocks
         while(x!= endx|| y!= endy)
         {
             if (Chess.position[x][y]!=null)
@@ -38,10 +41,12 @@ public class bishop extends Piece {
             x +=xDirection;
             y+= yDirection;
         }
+        //empty
         if (Chess.position[endx][endy]== null)
         {
             return true;
         }
+        //capture
         if (Chess.position[endx][endy].color != color)
         {
             return true;
