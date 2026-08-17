@@ -4,11 +4,13 @@ public class BoardComponent extends JComponent
 {
     public BoardComponent()
     {
+        //select the pieces
         addMouseListener(new BoardMouseListener());
     }
     public void paintComponent(Graphics g)
     {
         super.paintComponent(g);
+        //draws the board
         for (int x=0;x<8;x++)
         {
             for (int y=0;y<8;y++)
@@ -22,6 +24,7 @@ public class BoardComponent extends JComponent
                     g.setColor(new Color(233,174,95));
                 }
                 g.fillRect(x*44,y*44,44,44);
+                //draws a piece if needed
                 if (Chess.position[x][y]!=null)
                 {
                     Chess.position[x][y].drawPiece(x*44+12,y*44+12,g);
