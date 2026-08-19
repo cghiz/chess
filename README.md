@@ -1,4 +1,5 @@
 # chess
 I have completed Steps 1-7.
 
-<img width="273" height="268" alt="Screenshot 2026-08-14 130208" src="https://github.com/user-attachments/assets/1faee038-cdaa-4bb4-9223-955ad32c4d7e" />
+<img width="274" height="275" alt="Screenshot 2026-08-19 171350" src="https://github.com/user-attachments/assets/b9492d32-268c-406a-b6b2-c50f33038255" />
+
